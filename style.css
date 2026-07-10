@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+}
+
+.info {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0 40px;
+    gap: 28px;
+    font-size: 13px;
+    color: rgb(193, 197, 200);
+    background-color: rgb(0, 0, 0);
+    height: 50px;
+    border-radius: 0 0 8px 8px;
+}
+
+.info p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.info img {
+    object-fit: contain;
+}
+
+.top-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.delivery-btn {
+    height: fit-content;
+    background-color: #ffc107;
+    color: rgb(68, 64, 64);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 25px;
+}
+
+
+@media (max-width: 900px) {
+    .info {
+        gap: 15px;
+        padding: 0 15px;
+        margin: 0;
+    }
+
+    .delivery-btn {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    .social-icons {
+        gap: 6px;
+        margin-left: 15px;
+    }
+
+    .social-icons img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 700px) {
+    .info {
+        height: auto;
+        min-height: 50px;
+        flex-wrap: wrap;
+        padding: 12px 15px;
+        margin: 0;
+    }
+
+    .top-right {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin: 0;
+    }
+
+    .top-right {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .social-icons {
+        margin-left: 0;
+    }
+}
+
+.navbar {
+    font-family: "Inter", sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    background-color: aliceblue;
+    height: 70px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+}
