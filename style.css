@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: linear-gradient(120deg, #ffffff, #fff3dd, #ffd6a5);
+    background: linear-gradient(120deg, #ffffff, #fff3dd, #ffd6a5);
 }
 
 .info {
@@ -374,7 +374,6 @@ body {
     margin: 0;
     font-family: "Abril Fatface", serif;
     font-size: 75px;
-    margin-left: 200px;
     padding: 0;
     line-height: 0.6;
     margin-top: 50px;
@@ -384,7 +383,6 @@ body {
     margin: 0;
     font-family: "Abril Fatface", serif;
     font-size: 75px;
-    margin-left: 200px;
     padding: 0;
     color: rgb(253, 37, 37);
 }
@@ -393,7 +391,6 @@ body {
     margin: 0;
     font-family: "Abril Fatface", serif;
     font-size: 75px;
-    margin-left: 200px;
     padding: 0;
     line-height: 0.6;
 }
@@ -402,17 +399,161 @@ body {
     margin: 0;
     font-family: "Abril Fatface", serif;
     font-size: 75px;
-    margin-bottom: 200px;
-    margin-left: 200px;
     padding: 0;
 }
 
-.titlepic{
-    margin: 0;
-    position: absolute;
-    margin-bottom: 100px;
-    border-radius: 30%;
-    margin-left: 900px;
-
-
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 60px;
+    overflow: hidden;
 }
+
+.hero-text {
+    flex: 1;
+}
+
+.titlepic {
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50px;
+    object-fit: cover;
+
+    margin-left: 40px;
+    transform: translateY(40px);
+}
+
+.desc {
+    font-family: "Inter", sans-serif;
+    color: #4e4d4d;
+}
+
+.hot-deal-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 18px 28px 18px 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    width: fit-content;
+    animation: float 3s ease-in-out infinite;
+}
+
+.hot-deal-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #fde3de;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.hot-deal-icon--clock {
+    background: #dcece3;
+}
+
+.hot-deal-icon--star {
+    background: #fdecd2;
+}
+
+.hot-deal-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.hot-deal-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+    color: #1a1a1a;
+}
+
+.hot-deal-sub {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #8a8a8a;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* ===== hero image + floating cards over it ===== */
+
+.hero-image-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.float-card {
+    position: absolute;
+    z-index: 2;
+}
+
+.float-card--top {
+    top: 20px;
+    left: -40px;
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 0s;
+}
+
+.float-card--mid {
+    top: 45%;
+    right: -60px;
+    transform: translateY(-50%);
+    animation: float-mid 3s ease-in-out infinite;
+    animation-delay: 0.4s;
+}
+
+.float-card--bottom {
+    bottom: 10px;
+    right: -30px;
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 0.8s;
+}
+
+@keyframes float-mid {
+
+    0%,
+    100% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(calc(-50% - 8px));
+    }
+}
+
+@media (max-width: 900px) {
+    .float-card--top {
+        left: -10px;
+    }
+
+    .float-card--mid {
+        right: -10px;
+    }
+
+    .float-card--bottom {
+        right: 0;
+    }
+}
+
+
