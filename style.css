@@ -145,7 +145,6 @@ body {
     color: inherit;
 }
 
-
 .group {
     display: flex;
     line-height: 28px;
@@ -193,11 +192,9 @@ input:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
 
 /* ===== Giovanni & Elena Ricci — animated title ===== */
-
 :root {
     --wine: #7C2A2A;
     --gold: #B8863B;
@@ -485,7 +482,6 @@ input:hover {
 }
 
 /* ===== hero image + floating cards over it ===== */
-
 .hero-image-wrap {
     position: relative;
     flex-shrink: 0;
@@ -619,11 +615,7 @@ input:hover {
     }
 }
 
-
-
-
 @media(max-width:900px) {
-
     .hero {
         flex-direction: column;
         padding: 30px 20px;
@@ -656,4 +648,329 @@ input:hover {
     .socialSvg {
         width: 14px;
     }
+}
+
+.menu {
+    font-family: "Poppins", sans-serif;
+    padding: 20px 45px;
+    background-color: rgb(236, 51, 51);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    margin-top: 25px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.watch-story {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.play-icon {
+    width: 20px;
+    height: 20px;
+    fill: #e0472b;
+    margin-left: 3px;
+    /* optical centering for the triangle */
+    transition: fill 0.3s ease;
+}
+
+.watch-text {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1a1a1a;
+    transition: color 0.3s ease;
+}
+
+/* Hover state */
+.watch-story:hover .play-btn {
+    background-color: #e0472b;
+}
+
+.watch-story:hover .play-icon {
+    fill: #ffffff;
+}
+
+.watch-story:hover .watch-text {
+    color: #e0472b;
+}
+
+/* Register the animatable integer property */
+@property --num {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+}
+
+.stats-wrapper {
+    padding: 40px 20px;
+}
+
+.stats-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.second-row {
+    margin-top: 32px;
+}
+
+.divider {
+    width: 1px;
+    height: 48px;
+    background-color: #d4c9c0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-label {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #a89a90;
+}
+
+/* Base counter styling */
+.stat-number {
+    --num: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 800;
+    font-size: 42px;
+    color: #1a1a1a;
+    line-height: 1;
+    counter-reset: num var(--num);
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+    animation-fill-mode: both;
+}
+
+.stat-number::before {
+    content: counter(num);
+}
+
+/* Per-stat triggers + suffixes */
+.num-850 {
+    animation-name: count-850;
+}
+
+.num-850::after {
+    content: '+';
+}
+
+.num-120 {
+    animation-name: count-120;
+}
+
+.num-120::after {
+    content: '+';
+}
+
+.num-15 {
+    animation-name: count-15;
+}
+
+.num-15::after {
+    content: '+';
+}
+
+.num-12 {
+    animation-name: count-12;
+}
+
+.num-12::after {
+    content: 'yr';
+}
+
+@keyframes count-850 {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: 850;
+    }
+}
+
+@keyframes count-120 {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: 120;
+    }
+}
+
+@keyframes count-15 {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: 15;
+    }
+}
+
+@keyframes count-12 {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: 12;
+    }
+}
+
+/* ==============================
+   FOOD CATEGORY MOVING BAR
+================================ */
+.food-slider {
+    width: 100%;
+    overflow: hidden;
+    background: #ec3333;
+    /* 🔴 red background */
+    padding: 12px 0;
+    border: none;
+}
+
+.food-track {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: max-content;
+    animation: scroll-food 20s linear infinite;
+}
+
+.food-track span {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #f6f6f6;
+    white-space: nowrap;
+}
+
+.food-track span:nth-child(even) {
+    color: #e5dfdf;
+    font-size: 18px;
+}
+
+@keyframes scroll-food {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* pause when mouse over */
+.food-slider:hover .food-track {
+    animation-play-state: paused;
+}
+
+.offer {
+    font-family: "Alex Brush", cursive;
+    color: #E22613;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 25px;
+
+}
+
+
+.category {
+    justify-content: center;
+}
+
+.category1 {
+    font-family: "Abril Fatface", serif;
+    font-size: 40px !important;
+
+}
+
+.category2 {
+    font-family: "Abril Fatface", serif;
+    color: rgb(243, 21, 21);
+    font-size: 40px !important;
+}
+
+.gradient-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #d63f2c, #eaa644);
+    margin: 0 auto;
+    border-radius: 100px;
+}
+
+.paragh {
+    color: rgb(118, 108, 108);
+    font-family: "Inter", sans-serif;
+}
+
+/* From Uiverse.io by SteveBloX */
+.card {
+    width: 190px;
+    height: 254px;
+    background: rgba(217, 217, 217, 0.58);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between image and text */
+}
+
+.card p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+}
+
+.card:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+}
+
+.card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+
+.menucards{
+    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
 }
