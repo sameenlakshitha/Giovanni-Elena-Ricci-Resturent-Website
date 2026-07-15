@@ -898,7 +898,6 @@ input:hover {
     text-align: center;
     margin-top: 50px;
     font-size: 25px;
-
 }
 
 
@@ -933,21 +932,26 @@ input:hover {
 
 /* From Uiverse.io by SteveBloX */
 .card {
-    width: 190px;
-    height: 254px;
-    background: rgba(217, 217, 217, 0.58);
-    border: 1px solid white;
-    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-    backdrop-filter: blur(6px);
-    border-radius: 17px;
+    width: 180px; 
+    height: 180px; 
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 24px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.04); 
     text-align: center;
     cursor: pointer;
-    transition: all 0.5s;
+    transition: all 0.3s ease-in-out;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Space between image and text */
+    gap: 12px;
+    padding: 20px;
+}
+
+.card.active, .card:hover {
+    border: 2px solid #ff4d4d;
+    box-shadow: 0px 15px 35px rgba(255, 77, 77, 0.15);
 }
 
 .card p {
@@ -959,8 +963,11 @@ input:hover {
 }
 
 .card:hover {
-    border: 1px solid black;
+    border: 1px solid rgb(239, 57, 57);
     transform: scale(1.05);
+}
+.card img {
+    border-radius: 50%;
 }
 
 .card:active {
@@ -973,4 +980,29 @@ input:hover {
     align-items: center;
     justify-content: center;
     gap: 40px;
+}
+
+
+.about{
+font-family: "Alex Brush", cursive;
+    color: #E22613;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 25px;
+    
+}
+
+.ab1{
+    font-family: "Abril Fatface", serif;
+
+}
+
+.our-text{
+    color: black;
+    
+}
+
+.food-text{
+    color: #ec3333;
 }
