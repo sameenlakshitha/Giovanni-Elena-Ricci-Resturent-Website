@@ -983,26 +983,46 @@ input:hover {
 }
 
 
-.about{
-font-family: "Alex Brush", cursive;
-    color: #E22613;
-    font-weight: 400;
-    text-align: center;
-    margin-top: 50px;
-    font-size: 25px;
-    
+/* ===== About section ===== */
+.about-section { max-width: 1280px; margin: 110px auto 90px; padding: 0 60px; display: grid; grid-template-columns: minmax(320px, .9fr) minmax(400px, 1.1fr); align-items: center; gap: clamp(45px, 7vw, 110px); box-sizing: border-box; }
+.about-image-wrap { position: relative; padding: 0 38px 46px 0; }
+.about-image { display: block; width: 100%; max-width: 510px; height: 570px; object-fit: cover; border-radius: 24px; box-shadow: 0 20px 45px rgba(41, 25, 15, .17); }
+.about-image-small { position: absolute; z-index: 2; right: 0; bottom: 0; width: 210px; height: 225px; object-fit: cover; border: 6px solid #fff; border-radius: 18px; box-shadow: 0 16px 35px rgba(41, 25, 15, .2); }
+.experience-badge { position: absolute; z-index: 3; top: 38px; left: -25px; width: 112px; min-height: 132px; padding: 15px 12px; box-sizing: border-box; border-radius: 18px; background: #ec2518; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: 0 14px 28px rgba(226, 38, 19, .28); }
+.experience-badge strong { font-family: "Abril Fatface", serif; font-size: 42px; font-weight: 400; line-height: 1; }
+.experience-badge strong span { font-size: .65em; vertical-align: top; }
+.experience-badge > span { margin-top: 8px; font-family: "Inter", sans-serif; font-size: 13px; font-weight: 600; line-height: 1.55; }
+.about-content { max-width: 650px; }
+.about { margin: 0 0 12px; font-family: "Alex Brush", cursive; color: #e22613; font-size: 32px; line-height: 1; }
+.ab1 { margin: 0; font-family: "Abril Fatface", serif; font-size: clamp(38px, 4vw, 58px); font-weight: 400; line-height: 1.16; color: #202020; }
+.food-text { color: #ec3333; }
+.about-line { margin: 24px 0 20px; }
+.aboutdesc { margin: 0; font-family: "Inter", sans-serif; color: #7f7676; font-size: 16px; line-height: 1.8; }
+.about-highlights { display: grid; gap: 16px; margin: 28px 0 30px; }
+.about-highlight { display: flex; align-items: center; gap: 16px; }
+.highlight-icon { width: 46px; height: 46px; border-radius: 13px; flex: 0 0 46px; display: grid; place-items: center; color: #e22613; background: #ffe7e4; font-size: 19px; }
+.highlight-icon--gold { color: #df940b; background: #fff1d9; }
+.highlight-icon--green { color: #397a55; background: #e5f0e9; }
+.about-highlight h3, .about-highlight p { margin: 0; font-family: "Inter", sans-serif; }
+.about-highlight h3 { color: #252525; font-size: 16px; font-weight: 700; }
+.about-highlight p { margin-top: 3px; color: #8a8282; font-size: 13px; line-height: 1.45; }
+.about-button { display: inline-block; padding: 15px 29px; border-radius: 28px; background: #e22613; color: #fff; font-family: "Poppins", sans-serif; font-weight: 600; text-decoration: none; box-shadow: 0 12px 20px rgba(226, 38, 19, .23); transition: transform .2s ease, background-color .2s ease; }
+.about-button:hover { background: #c91f10; transform: translateY(-2px); }
+
+@media (max-width: 900px) {
+    .about-section { grid-template-columns: 1fr; max-width: 680px; margin: 75px auto 60px; padding: 0 24px; gap: 42px; }
+    .about-image { max-width: none; height: min(75vw, 540px); }
+    .about-image-wrap { padding-right: 42px; }
 }
 
-.ab1{
-    font-family: "Abril Fatface", serif;
-
-}
-
-.our-text{
-    color: black;
-    
-}
-
-.food-text{
-    color: #ec3333;
+@media (max-width: 500px) {
+    .about-section { padding: 0 18px; }
+    .about-image { height: 410px; border-radius: 18px; }
+    .about-image-wrap { padding: 0 25px 32px 0; }
+    .about-image-small { width: 145px; height: 155px; right: 0; border-width: 4px; border-radius: 14px; }
+    .experience-badge { top: 25px; left: -7px; width: 92px; min-height: 112px; padding: 12px 8px; border-radius: 14px; }
+    .experience-badge strong { font-size: 34px; }
+    .experience-badge > span { margin-top: 5px; font-size: 11px; }
+    .about { font-size: 29px; }
+    .about-highlight { align-items: flex-start; }
 }
