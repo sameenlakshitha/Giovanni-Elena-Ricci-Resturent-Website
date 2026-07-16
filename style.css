@@ -1304,6 +1304,7 @@ button:active {
     box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
     transition: .35s;
     cursor: pointer;
+
 }
 
 .foodcard:hover {
@@ -1322,11 +1323,11 @@ button:active {
     display: block;
 }
 
-.badge {
+.badge1 {
     position: absolute;
     top: 18px;
     left: 18px;
-    background: #f6b23c;
+    background: #f6a623;
     color: #222;
     padding: 7px 14px;
     border-radius: 20px;
@@ -1443,4 +1444,52 @@ button:active {
 .mhrt.active i {
     color: #e63946;
     font-weight: 900;
+}
+
+.menu-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.badge2 {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: #2d6a4f;
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.badge3 {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: #e8281a;
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.badge4 {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: #f6a623;
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
 }
