@@ -1497,3 +1497,73 @@ button:active {
 .fulmenubtn{
     font-family: "Poppins", sans-serif;
 }
+
+.food-gallery{
+    background:white;
+    padding:80px 0;
+    overflow:hidden;
+}
+
+
+.food-title{
+    text-align:center;
+    font-family:"Abril Fatface",serif;
+    font-size:60px;
+}
+
+
+.gallery{
+    position:relative;
+    height:500px;
+    margin-top:50px;
+}
+
+
+.food-img{
+    position:absolute;
+    width:260px;
+    height:260px;
+    object-fit:cover;
+
+    border-radius:40px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+    transition:.4s;
+}
+
+
+.img1{
+    left:10%;
+    top:80px;
+    transform:rotate(-12deg);
+}
+
+
+.img2{
+    left:32%;
+    top:20px;
+    width:320px;
+    height:320px;
+}
+
+
+.img3{
+    right:30%;
+    top:100px;
+    transform:rotate(12deg);
+}
+
+
+.img4{
+    right:8%;
+    top:40px;
+    transform:rotate(-8deg);
+}
+
+
+
+.food-img:hover{
+    transform:scale(1.08) rotate(0deg);
+    z-index:5;
+}
