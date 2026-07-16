@@ -1493,3 +1493,7 @@ button:active {
     font-size: 13px;
     font-weight: 700;
 }
+
+.fulmenubtn{
+    font-family: "Poppins", sans-serif;
+}
