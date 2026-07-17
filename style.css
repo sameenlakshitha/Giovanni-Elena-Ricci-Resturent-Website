@@ -1567,3 +1567,130 @@ button:active {
     transform:scale(1.08) rotate(0deg);
     z-index:5;
 }
+
+.team1{
+    font-family: "Dancing Script", cursive;
+    text-align: center;
+    font-size: 1.35rem;
+    color: #e8281a;
+    margin: 0;
+    padding: 0;
+}
+
+.team2{
+    font-family: "Playfair Display", serif;
+}
+
+.team3{
+    color: #e8281a;
+}
+
+
+.chef-card {
+  width: 280px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.chef-card *,
+.chef-card *::before,
+.chef-card *::after {
+  box-sizing: inherit;
+}
+
+.chef-card .chef-photo {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+
+.chef-card .chef-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.chef-card:hover .chef-photo img {
+  transform: scale(1.05);
+}
+
+/* social icon bar: sits just below the photo, hidden until hover */
+.chef-card .social-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px 0;
+  margin: 0;
+  list-style: none;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.chef-card:hover .social-bar {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.chef-card .social-bar a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e8482c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.chef-card .social-bar a:hover {
+  background: #c93a22;
+  transform: translateY(-3px);
+}
+
+.chef-card .social-bar svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.chef-card .chef-info {
+  padding: 24px 16px 28px;
+}
+
+.chef-card .chef-info h3 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+.chef-card .chef-info .role {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #e8482c;
+}
+
+.chef-card .chef-info .exp {
+  margin: 0;
+  font-size: 14px;
+  color: #999;
+}
