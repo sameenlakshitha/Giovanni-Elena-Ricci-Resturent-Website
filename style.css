@@ -1427,7 +1427,8 @@ button:active {
 
 .mhrt i {
     font-size: 18px;
-    color: #999; /* empty/outline heart by default */
+    color: #999;
+    /* empty/outline heart by default */
     transition: 0.3s ease;
 }
 
@@ -1436,8 +1437,10 @@ button:active {
 }
 
 .mhrt:hover i {
-    color: #e63946;   /* fills red on hover */
-    font-weight: 900; /* makes the outline icon render solid */
+    color: #e63946;
+    /* fills red on hover */
+    font-weight: 900;
+    /* makes the outline icon render solid */
 }
 
 /* optional: keep it filled after click via JS toggling this class */
@@ -1494,81 +1497,81 @@ button:active {
     font-weight: 700;
 }
 
-.fulmenubtn{
+.fulmenubtn {
     font-family: "Poppins", sans-serif;
 }
 
-.food-gallery{
-    background:white;
-    padding:80px 0;
-    overflow:hidden;
+.food-gallery {
+    background: white;
+    padding: 80px 0;
+    overflow: hidden;
 }
 
 
-.food-title{
-    text-align:center;
-    font-family:"Abril Fatface",serif;
-    font-size:60px;
+.food-title {
+    text-align: center;
+    font-family: "Abril Fatface", serif;
+    font-size: 60px;
 }
 
 
-.gallery{
-    position:relative;
-    height:500px;
-    margin-top:50px;
+.gallery {
+    position: relative;
+    height: 500px;
+    margin-top: 50px;
 }
 
 
-.food-img{
-    position:absolute;
-    width:260px;
-    height:260px;
-    object-fit:cover;
+.food-img {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
 
-    border-radius:40px;
+    border-radius: 40px;
 
-    box-shadow:0 20px 40px rgba(0,0,0,.18);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .18);
 
-    transition:.4s;
+    transition: .4s;
 }
 
 
-.img1{
-    left:10%;
-    top:80px;
-    transform:rotate(-12deg);
+.img1 {
+    left: 10%;
+    top: 80px;
+    transform: rotate(-12deg);
 }
 
 
-.img2{
-    left:32%;
-    top:20px;
-    width:320px;
-    height:320px;
+.img2 {
+    left: 32%;
+    top: 20px;
+    width: 320px;
+    height: 320px;
 }
 
 
-.img3{
-    right:30%;
-    top:100px;
-    transform:rotate(12deg);
+.img3 {
+    right: 30%;
+    top: 100px;
+    transform: rotate(12deg);
 }
 
 
-.img4{
-    right:8%;
-    top:40px;
-    transform:rotate(-8deg);
+.img4 {
+    right: 8%;
+    top: 40px;
+    transform: rotate(-8deg);
 }
 
 
 
-.food-img:hover{
-    transform:scale(1.08) rotate(0deg);
-    z-index:5;
+.food-img:hover {
+    transform: scale(1.08) rotate(0deg);
+    z-index: 5;
 }
 
-.team1{
+.team1 {
     font-family: "Dancing Script", cursive;
     text-align: center;
     font-size: 1.35rem;
@@ -1577,120 +1580,323 @@ button:active {
     padding: 0;
 }
 
-.team2{
+.team2 {
     font-family: "Playfair Display", serif;
 }
 
-.team3{
+.team3 {
     color: #e8281a;
 }
 
 
 .chef-card {
-  width: 280px;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  text-align: center;
-  overflow: hidden;
-  box-sizing: border-box;
+    width: 280px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .chef-card *,
 .chef-card *::before,
 .chef-card *::after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 .chef-card .chef-photo {
-  position: relative;
-  width: 100%;
-  height: 340px;
-  border-radius: 20px 20px 0 0;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 340px;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
 }
 
 .chef-card .chef-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
 .chef-card:hover .chef-photo img {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 /* social icon bar: sits just below the photo, hidden until hover */
 .chef-card .social-bar {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  padding: 16px 0;
-  margin: 0;
-  list-style: none;
-  transform: translateY(100%);
-  opacity: 0;
-  transition: transform 0.35s ease, opacity 0.35s ease;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    padding: 16px 0;
+    margin: 0;
+    list-style: none;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
 .chef-card:hover .social-bar {
-  transform: translateY(0);
-  opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .chef-card .social-bar a {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #e8482c;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-  transition: background 0.25s ease, transform 0.25s ease;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #e8482c;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .chef-card .social-bar a:hover {
-  background: #c93a22;
-  transform: translateY(-3px);
+    background: #c93a22;
+    transform: translateY(-3px);
 }
 
 .chef-card .social-bar svg {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
 }
 
 .chef-card .chef-info {
-  padding: 24px 16px 28px;
+    padding: 24px 16px 28px;
 }
 
 .chef-card .chef-info h3 {
-  margin: 0 0 4px;
-  font-size: 22px;
-  font-weight: 700;
-  color: #1c1c1c;
+    margin: 0 0 4px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1c1c1c;
 }
 
 .chef-card .chef-info .role {
-  margin: 0 0 8px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #e8482c;
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #e8482c;
 }
 
 .chef-card .chef-info .exp {
-  margin: 0;
-  font-size: 14px;
-  color: #999;
+    margin: 0;
+    font-size: 14px;
+    color: #999;
+}
+
+.reviews1 {
+    font-family: "Dancing Script", cursive;
+    margin: 0 auto;
+    margin-top: 100px;
+    text-align: center;
+    font-size: 1.35rem;
+    color: #e8281a;
+    margin-bottom: 4px;
+}
+
+.feedbk1 {
+    font-family: "Playfair Display", serif;
+}
+
+.feedbk2 {
+    font-family: "Playfair Display", serif;
+    color: #e8281a;
+}
+
+.testi-section {
+    padding: 80px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.testi-section *,
+.testi-section *::before,
+.testi-section *::after {
+    box-sizing: inherit;
+}
+
+.testi-section .testi-script {
+    font-family: 'Brush Script MT', 'Segoe Script', cursive;
+    font-size: 30px;
+    color: #e8482c;
+    margin: 0 0 6px;
+}
+
+.testi-section .testi-heading {
+    font-size: 42px;
+    font-weight: 800;
+    color: #1c1c1c;
+    margin: 0 0 14px;
+}
+
+.testi-section .testi-heading span {
+    color: #e8482c;
+}
+
+.testi-section .testi-heading::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 18px auto 0;
+    background: linear-gradient(90deg, #e8482c, #f6a623);
+}
+
+/* carousel viewport */
+.testi-section .testi-carousel {
+    max-width: 1100px;
+    margin: 50px auto 0;
+    overflow: hidden;
+}
+
+.testi-section .testi-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.testi-section .testi-card {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    background: #fbeee5;
+    border-radius: 16px;
+    padding: 34px 30px;
+    margin: 0 12px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.testi-section .testi-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.testi-section .testi-stars {
+    color: #f6a623;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.testi-section .testi-quote {
+    font-size: 46px;
+    line-height: 1;
+    color: #e8482c;
+    opacity: 0.35;
+    font-family: Georgia, serif;
+}
+
+.testi-section .testi-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #444;
+    margin: 0 0 26px;
+}
+
+.testi-section .testi-person {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.testi-section .testi-person img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e8482c;
+}
+
+.testi-section .testi-person h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1c1c1c;
+}
+
+.testi-section .testi-person span {
+    font-size: 13px;
+    color: #999;
+}
+
+/* dots */
+.testi-section .testi-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 34px;
+}
+
+.testi-section .testi-dots .testi-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #e3cfc2;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+    padding: 0;
+    border: none;
+}
+
+.testi-section .testi-dots .testi-dot.active {
+    background: #2563e6;
+    transform: scale(1.2);
+}
+
+/* responsive */
+@media (max-width: 900px) {
+    .testi-section .testi-card {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .testi-section .testi-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin: 0 6px;
+    }
+
+    .testi-section .testi-heading {
+        font-size: 30px;
+    }
+}
+
+.cntct1{
+    margin: 0;
+    padding: 0;
+    font-family: "Dancing Script", cursive;
+    color: #e8281a;
+    font-size: 1.35rem;
+    text-align: center;
+    
+}
+
+.cntct2{
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    text-align: center;
+    font-weight: 900;
+}
+
+.contactab{
+    margin: 0;
+    padding: 0;
+    
 }
