@@ -1878,6 +1878,290 @@ button:active {
     }
 }
 
+/* ===== Responsive layout safeguards ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+.menu-filters,
+.chef-grid {
+    flex-wrap: wrap;
+    padding-inline: 20px;
+}
+
+/* The menu cards were accidentally nested in several .menu-grid containers.
+   Flatten them visually so all four cards share one responsive grid. */
+.menu-grid .menu-grid {
+    display: contents;
+}
+
+.menu-grid {
+    padding-inline: 20px;
+}
+
+@media (max-width: 1050px) {
+    .navbar {
+        height: auto;
+        min-height: 70px;
+        flex-wrap: wrap;
+        gap: 14px 24px;
+        padding: 14px 20px;
+    }
+
+    .navbar > p {
+        display: none !important;
+    }
+
+    .navbar .group {
+        flex: 1 1 180px;
+        max-width: 260px;
+    }
+
+    .menucards {
+        flex-wrap: wrap;
+        padding-inline: 20px;
+        gap: 20px;
+    }
+
+    .card {
+        width: min(180px, calc(50vw - 40px));
+        height: 180px;
+    }
+
+    .food-img {
+        width: 210px;
+        height: 210px;
+    }
+
+    .img2 {
+        width: 260px;
+        height: 260px;
+    }
+
+    .img1 { left: 5%; }
+    .img2 { left: 27%; }
+    .img3 { right: 24%; }
+    .img4 { right: 4%; }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        justify-content: center;
+        gap: 12px 18px;
+        font-size: 14px;
+    }
+
+    .navbar .group {
+        order: 2;
+        flex-basis: min(100%, 320px);
+        max-width: 320px;
+    }
+
+    .title-block {
+        padding: 42px 16px;
+    }
+
+    .title-block .subtitle {
+        font-size: .68rem;
+        letter-spacing: .25em;
+        padding-left: .25em;
+    }
+
+    .hero {
+        padding: 24px 18px 36px;
+        overflow: visible;
+    }
+
+    .title2,
+    .title3,
+    .title4,
+    .title5 {
+        font-size: clamp(42px, 14vw, 62px);
+    }
+
+    .desc {
+        line-height: 1.6;
+    }
+
+    .desc br {
+        display: none;
+    }
+
+    .watch-story {
+        margin-top: 18px;
+    }
+
+    .watch-story .play-btn {
+        margin-left: 0 !important;
+    }
+
+    .stats-wrapper {
+        padding: 32px 0 0;
+    }
+
+    .stats-row {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .stats-row .divider {
+        display: none;
+    }
+
+    .stat-item {
+        min-width: 105px;
+        align-items: center;
+    }
+
+    .hero-image-wrap {
+        width: min(100%, 500px);
+        margin: 0 auto;
+    }
+
+    .titlepic {
+        width: 100%;
+        margin-top: 10px;
+        transform: none;
+    }
+
+    .hot-deal-card {
+        padding: 10px 14px 10px 10px;
+        gap: 9px;
+        border-radius: 14px;
+    }
+
+    .hot-deal-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    .hot-deal-title { font-size: 13px; }
+    .hot-deal-sub { font-size: 10px; }
+    .float-card--top { top: 12px; left: 0; }
+    .float-card--mid { right: 0; }
+    .float-card--bottom { right: 0; bottom: 0; }
+
+    .offer {
+        margin-top: 64px !important;
+    }
+
+    .category1,
+    .category2 {
+        font-size: clamp(30px, 9vw, 40px) !important;
+    }
+
+    .paragh {
+        padding-inline: 20px;
+        line-height: 1.5;
+    }
+
+    .paragh p {
+        line-height: 1.5 !important;
+    }
+
+    .menucards {
+        gap: 14px;
+        padding-inline: 14px;
+    }
+
+    .card {
+        width: min(160px, calc(50vw - 24px));
+        height: 160px;
+        padding: 14px;
+    }
+
+    .card img { width: 64px !important; }
+
+    .menuclr1 { font-size: clamp(32px, 9vw, 45px); }
+    .menu-filters { margin-top: 48px !important; gap: 10px !important; }
+    .menu-filters button { padding: 10px 16px; letter-spacing: 1px; }
+
+    .foodcard {
+        width: min(100%, 360px);
+    }
+
+    .menu-grid {
+        margin-top: 28px;
+        gap: 18px;
+        padding-inline: 16px;
+    }
+
+    .food-gallery { padding: 56px 0; }
+    .food-title { font-size: clamp(34px, 10vw, 52px); padding-inline: 16px; }
+    .gallery {
+        height: auto;
+        margin: 32px auto 0;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .food-img,
+    .img1,
+    .img2,
+    .img3,
+    .img4 {
+        position: static;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        border-radius: 20px;
+        transform: none;
+    }
+
+    .chef-grid {
+        margin-top: 32px !important;
+        padding: 0 16px 40px;
+    }
+
+    .chef-card { width: min(100%, 330px); }
+
+    .reviews1 { margin-top: 60px; }
+    .testi-section { padding: 50px 14px; }
+
+    .contact-section { padding: 40px 14px 60px; }
+    .contact-section .contact-info,
+    .contact-section .contact-form { padding: 28px 22px; }
+
+    .site-footer .footer-bottom-links {
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+}
+
+@media (max-width: 430px) {
+    .info p {
+        white-space: normal;
+    }
+
+    .info .top-right {
+        align-items: flex-start;
+    }
+
+    .social-icons {
+        flex-wrap: wrap;
+    }
+
+    .navbar { gap: 10px 14px; }
+    .navbar a { font-size: 13px; }
+    .menu { padding: 16px 26px; }
+    .watch-text { font-size: 14px !important; }
+    .stat-number { font-size: 34px; }
+    .stat-label { font-size: 10px; }
+    .about-image { height: min(110vw, 410px); }
+    .contact-section .contact-socials { flex-wrap: wrap; }
+}
+
 .cntct1 {
     margin: 0;
     padding: 0;
@@ -2350,5 +2634,22 @@ button:active {
     .site-footer .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+/* Keep the later component styles from restoring desktop spacing on phones. */
+@media (max-width: 700px) {
+    .contact-section {
+        padding: 40px 14px 60px;
+    }
+
+    .contact-section .contact-info,
+    .contact-section .contact-form {
+        padding: 28px 22px;
+    }
+
+    .site-footer .footer-bottom-links {
+        flex-wrap: wrap;
+        gap: 12px 20px;
     }
 }
