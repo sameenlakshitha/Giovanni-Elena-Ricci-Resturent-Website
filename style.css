@@ -420,7 +420,7 @@ input:hover {
 
 .desc {
     font-family: "Inter", sans-serif;
-    color: #4e4d4d;
+    color: #ffffff;
 }
 
 .hot-deal-card {
@@ -897,6 +897,35 @@ input:hover {
     animation-play-state: paused;
 }
 
+.premium-section {
+    width: 100%;
+    background-color: #f9f5f0;
+    padding-bottom: 60px;
+}
+
+.premium-section > div:first-child,
+.premium-section .menucards {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+    box-sizing: border-box;
+}
+
+.premium-section .menucards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 40px;
+}
+
+@media (max-width: 900px) {
+    .premium-section > div:first-child,
+    .premium-section .menucards {
+        padding: 0 25px;
+    }
+}
+
 .offer {
     font-family: "Alex Brush", cursive;
     color: #E22613;
@@ -990,7 +1019,7 @@ input:hover {
 /* ===== About section ===== */
 .about-section {
     max-width: 1280px;
-    margin: 110px auto 90px;
+    margin: 0 auto 90px;
     padding: 0 60px;
     display: grid;
     grid-template-columns: minmax(320px, .9fr) minmax(400px, 1.1fr);
@@ -998,6 +1027,10 @@ input:hover {
     gap: clamp(45px, 7vw, 110px);
     box-sizing: border-box;
     scroll-margin-top: 100px;
+}
+
+#about {
+    background-color: #f9f5f0;
 }
 
 .about-image-wrap {
@@ -2868,4 +2901,44 @@ img {
     letter-spacing: 4px;
     text-transform: uppercase;
     color: #a8a8a8;
+}
+
+/* Reset margins */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0b0f19;
+    /* Fallback color matching the video tone */
+    font-family: sans-serif;
+}
+
+/* Style the video container */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    /* Keeps video aspect ratio intact */
+    z-index: -1;
+    /* Places video behind the webpage text */
+
+    /* METHOD A: Direct Opacity Fade */
+    opacity: 0.8;
+    /* Adjust between 0.0 and 1.0 to change fade intensity */
+}
+
+/* Style the visible content */
+.content {
+    position: relative;
+    z-index: 1;
+    /* Pushes content safely over the video layer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+    text-align: center;
 }

@@ -86,8 +86,6 @@
         </div>
     </div>
 
-    </div>
-
     <nav class="navbar" style="font-weight: 500; font-size: 0.87rem;">
         <div class="sarab-logo">
             <div class="sarab-icon">
@@ -136,6 +134,16 @@
         <div class="leaf"></div>
         <p class="subtitle">Family <b>Italian</b> Restaurant</p>
     </div>
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="assets/videos/bgvid.mov" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Content Overlay -->
+    <!-- <main class="content"> -->
+    <!-- <h1>Welcome to My Website</h1> -->
+    <!-- <p>This text is highly readable over the faded video background.</p> -->
+    <!-- </main> -->
 
     <div class="hero">
         <div class="hero-text">
@@ -155,30 +163,30 @@
                         </svg>
                     </div>
                     <span
-                        style="font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 17px; color: rgb(83, 80, 80);"
+                        style="font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 17px; color: rgb(255, 255, 255);"
                         class="watch-text">Watch Our Story</span>
                 </div>
                 <div class="stats-wrapper">
                     <div class="stats-row">
                         <div class="stat-item">
                             <div class="stat-number num-850" data-target="850" data-suffix="+"></div>
-                            <div class="stat-label">Happy Customers</div>
+                            <div style="color: white;" class="stat-label">Happy Customers</div>
                         </div>
                         <div class="divider"></div>
                         <div class="stat-item">
                             <div class="stat-number num-120" data-target="120" data-suffix="+"></div>
-                            <div class="stat-label">Menu Items</div>
+                            <div style="color: white;" class="stat-label">Menu Items</div>
                         </div>
                         <div class="divider"></div>
                         <div class="stat-item">
                             <div class="stat-number num-15" data-target="15" data-suffix="+"></div>
-                            <div class="stat-label">Expert Chefs</div>
+                            <div style="color: white;" class="stat-label">Expert Chefs</div>
                         </div>
                     </div>
                     <div class="stats-row second-row">
                         <div class="stat-item">
                             <div class="stat-number num-12" data-target="12" data-suffix="yr"></div>
-                            <div class="stat-label">Experience</div>
+                            <div style="color: white;" class="stat-label">Experience</div>
                         </div>
                     </div>
                 </div>
@@ -239,27 +247,29 @@
         </div>
     </div>
 
-    <section>
-        <p class="offer" style="margin-top: 100px; margin-bottom: 0;">What we Offer</p>
-        <section class="category" style="display: flex; text-indent: 10px;">
-            <p class="category1" style="margin: 0;">Browse by</p>
-            <p class="category2" style="margin: 0;">Category</p>
-        </section>
-        <div class="gradient-line" style="margin-top: 10px;"></div>
-        <section class="paragh" style="text-align: center;">
-            <p style=" line-height: 0cm; margin: 0; padding: 0; margin-top: 30px;">From sizzling burgers to exotic world
-                cuisines - find your</p>
-            <p style="padding: 0; margin: 10; margin-bottom: 10px">favourite in our menu</p>
-        </section>
-    </section>
-
-    <div class="menucards" style="display: flex;">
-        <!-- From Uiverse.io by SteveBloX -->
-        <div class="card" style="font-family: Inter" , sans-serif;">
-            <img src="assets/pics/1.jpg" alt="Pizza" width="80">
-            <p>All Items</p>
-            <P style="color: rgb(161, 164, 167); font-size: 10px; font-weight: 450; ">99 item</P>
+    <section class="premium-section">
+        <div>
+            <p class="offer" style="margin-top: 0; margin-bottom: 0;">What we Offer</p>
+            <section class="category" style="display: flex; text-indent: 10px;">
+                <p class="category1" style="margin: 0;">Browse by</p>
+                <p class="category2" style="margin: 0;">Category</p>
+            </section>
+            <div class="gradient-line" style="margin-top: 10px;"></div>
+            <section class="paragh" style="text-align: center;">
+                <p style="line-height: 0cm; margin: 0; padding: 0; margin-top: 30px;">From sizzling burgers to exotic
+                    world
+                    cuisines - find your</p>
+                <p style="padding: 0; margin: 10; margin-bottom: 10px">favourite in our menu</p>
+            </section>
         </div>
+
+        <div class="menucards" style="display: flex;">
+            <!-- From Uiverse.io by SteveBloX -->
+            <div class="card" style="font-family: 'Inter', sans-serif;">
+                <img src="assets/pics/1.jpg" alt="Pizza" width="80">
+                <p>All Items</p>
+                <p style="color: rgb(161, 164, 167); font-size: 10px; font-weight: 450;">99 item</p>
+            </div>
         <!-- From Uiverse.io by SteveBloX -->
         <div class="card">
             <img src="assets/pics/3.jpg" width="80">
@@ -288,11 +298,12 @@
         <div class="card">
             <img src="assets/pics/6.jpg" width="80">
             <p>Desserts</p>
-            <P style="color: rgb(161, 164, 167); font-size: 10px; font-weight: 450;">20 items</P>
+            <p style="color: rgb(161, 164, 167); font-size: 10px; font-weight: 450;">20 items</p>
         </div>
     </div>
+    </section>
 
-    <div id="about" style="background-color: #fff;  margin-top: 100px;">
+    <div id="about">
         <section class="about-section" aria-labelledby="about-heading">
             <div class="about-image-wrap">
                 <img src="assets/pics/about1.jpg" alt="The warm interior of our restaurant" class="about-image">
@@ -304,7 +315,7 @@
                     class="about-image-small">
             </div>
             <div class="about-content">
-                <p style="margin-top: 100px;" class="about">Our Story</p>
+                <p style="margin-top: 0;" class="about">Our Story</p>
                 <h2 class="ab1" id="about-heading">We Invite You to Visit<br>Our <span class="food-text">Food
                         Restaurant</span></h2>
                 <div class="gradient-line about-line"></div>
