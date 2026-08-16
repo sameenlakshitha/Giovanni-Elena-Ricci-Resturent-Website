@@ -1,0 +1,10 @@
+{
+  "name": "giovanni-elena-ricci-restaurant-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static website for Giovanni & Elena Ricci restaurant.",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "check": "node scripts/check-site.mjs"
+  }
+}
