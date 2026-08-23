@@ -1,0 +1,4 @@
+package com.giovannielena.restaurant.entity;
+import jakarta.persistence.*; import lombok.*;
+@Entity @Table(name="addresses") @Getter @Setter @NoArgsConstructor @AllArgsConstructor
+public class Address { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) @Column(name="address_id") private Long id; @ManyToOne(fetch=FetchType.LAZY,optional=false) @JoinColumn(name="user_id") private User user; @Column(name="address_line",nullable=false) private String addressLine; @Column(nullable=false) private String city; @Column(name="postal_code") private String postalCode; @Column(name="is_default",nullable=false) private boolean defaultAddress; }
