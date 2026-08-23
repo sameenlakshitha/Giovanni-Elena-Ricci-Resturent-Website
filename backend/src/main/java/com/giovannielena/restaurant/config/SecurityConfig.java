@@ -1,36 +1,29 @@
 package com.giovannielena.restaurant.config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import com.giovannielena.restaurant.security.JwtAuthenticationFilter;
+import org.springframework.context.annotation.*;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.*;
+import org.springframework.web.cors.*;
 import java.util.Arrays;
 
 @Configuration
 public class SecurityConfig {
-    @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(AbstractHttpConfigurer::disable)
-            .cors(cors -> {})
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/categories", "/api/foods", "/api/auth/**").permitAll()
-                .anyRequest().authenticated());
+    private final JwtAuthenticationFilter jwtFilter;
+    public SecurityConfig(JwtAuthenticationFilter jwtFilter){this.jwtFilter=jwtFilter;}
+    @Bean SecurityFilterChain securityFilterChain(HttpSecurity http)throws Exception{
+        http.csrf(AbstractHttpConfigurer::disable).cors(cors->{}).sessionManagement(s->s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .authorizeHttpRequests(a->a.requestMatchers("/api/categories","/api/foods","/api/auth/**").permitAll().requestMatchers("/api/admin/**").hasRole("ADMIN").anyRequest().authenticated())
+            .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
-
-    @Bean
-    CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://localhost:5500", "http://127.0.0.1:5500"));
-        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
-        config.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
-        config.setAllowCredentials(true);
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", config);
-        return source;
+    @Bean PasswordEncoder passwordEncoder(){return new BCryptPasswordEncoder();}
+    @Bean CorsConfigurationSource corsConfigurationSource(){
+        CorsConfiguration c=new CorsConfiguration(); c.setAllowedOrigins(Arrays.asList("http://localhost:3000","http://localhost:5500","http://127.0.0.1:5500")); c.setAllowedMethods(Arrays.asList("GET","POST","PUT","PATCH","DELETE","OPTIONS")); c.setAllowedHeaders(Arrays.asList("Authorization","Content-Type")); c.setAllowCredentials(true);
+        UrlBasedCorsConfigurationSource s=new UrlBasedCorsConfigurationSource(); s.registerCorsConfiguration("/**",c); return s;
     }
 }
