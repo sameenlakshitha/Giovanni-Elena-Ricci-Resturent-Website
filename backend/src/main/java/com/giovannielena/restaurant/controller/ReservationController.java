@@ -1,0 +1,3 @@
+package com.giovannielena.restaurant.controller;
+import com.giovannielena.restaurant.dto.ReservationDto; import com.giovannielena.restaurant.service.ReservationService; import jakarta.validation.Valid; import org.springframework.security.core.Authentication; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/reservations") public class ReservationController { private final ReservationService service; public ReservationController(ReservationService s){service=s;} @PostMapping public Object create(Authentication a,@Valid @RequestBody ReservationDto r){return service.create(a.getName(),r);} @GetMapping public Object mine(Authentication a){return service.mine(a.getName());} }
