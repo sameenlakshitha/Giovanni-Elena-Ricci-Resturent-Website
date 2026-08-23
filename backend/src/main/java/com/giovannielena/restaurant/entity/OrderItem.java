@@ -1,4 +1,4 @@
 package com.giovannielena.restaurant.entity;
-import jakarta.persistence.*; import lombok.*; import java.math.BigDecimal;
+import com.fasterxml.jackson.annotation.JsonIgnore; import jakarta.persistence.*; import lombok.*; import java.math.BigDecimal;
 @Entity @Table(name="order_items") @Getter @Setter @NoArgsConstructor @AllArgsConstructor
-public class OrderItem { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) @Column(name="order_item_id") private Long id; @ManyToOne(fetch=FetchType.LAZY,optional=false) @JoinColumn(name="order_id") private Order order; @ManyToOne(fetch=FetchType.LAZY,optional=false) @JoinColumn(name="food_id") private FoodItem food; @Column(nullable=false) private Integer quantity; @Column(name="unit_price",nullable=false,precision=10,scale=2) private BigDecimal unitPrice; }
+public class OrderItem { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) @Column(name="order_item_id") private Long id; @JsonIgnore @ManyToOne(fetch=FetchType.LAZY,optional=false) @JoinColumn(name="order_id") private Order order; @ManyToOne(fetch=FetchType.LAZY,optional=false) @JoinColumn(name="food_id") private FoodItem food; @Column(nullable=false) private Integer quantity; @Column(name="unit_price",nullable=false,precision=10,scale=2) private BigDecimal unitPrice; }
