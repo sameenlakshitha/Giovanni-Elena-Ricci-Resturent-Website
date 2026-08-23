@@ -1,0 +1,4 @@
+package com.giovannielena.restaurant.entity;
+import jakarta.persistence.*; import lombok.*; import java.math.BigDecimal; import java.time.LocalDateTime;
+@Entity @Table(name="payments") @Getter @Setter @NoArgsConstructor @AllArgsConstructor
+public class Payment { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) @Column(name="payment_id") private Long id; @OneToOne(fetch=FetchType.LAZY,optional=false) @JoinColumn(name="order_id",unique=true) private Order order; @Column(nullable=false,precision=10,scale=2) private BigDecimal amount; @Enumerated(EnumType.STRING) @Column(name="payment_method",nullable=false) private Method method; @Enumerated(EnumType.STRING) @Column(name="payment_status",nullable=false) private Status status=Status.PENDING; @Column(name="transaction_id") private String transactionId; @Column(name="paid_at") private LocalDateTime paidAt; public enum Method{CASH,CARD,ONLINE} public enum Status{PENDING,PAID,FAILED,REFUNDED} }
