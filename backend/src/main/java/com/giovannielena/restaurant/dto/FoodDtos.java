@@ -1,0 +1,3 @@
+package com.giovannielena.restaurant.dto;
+import jakarta.validation.constraints.*; import java.math.BigDecimal;
+public final class FoodDtos { private FoodDtos(){} public record FoodRequest(@NotNull Long categoryId,@NotBlank @Size(max=150) String name,@Size(max=2000) String description,@NotNull @DecimalMin("0.00") BigDecimal price,@Size(max=500) String imageUrl,boolean available){} public record CategoryRequest(@NotBlank @Size(max=100) String name,@Size(max=255) String description,@Size(max=500) String imageUrl,boolean active){} }
