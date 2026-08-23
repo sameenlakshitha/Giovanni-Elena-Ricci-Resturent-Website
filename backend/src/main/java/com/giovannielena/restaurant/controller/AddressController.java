@@ -1,0 +1,3 @@
+package com.giovannielena.restaurant.controller;
+import com.giovannielena.restaurant.dto.OrderDtos.AddressRequest; import com.giovannielena.restaurant.service.AddressService; import jakarta.validation.Valid; import org.springframework.security.core.Authentication; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/addresses") public class AddressController { private final AddressService service; public AddressController(AddressService s){service=s;} @GetMapping public Object mine(Authentication a){return service.mine(a.getName());} @PostMapping public Object add(Authentication a,@Valid @RequestBody AddressRequest r){return service.add(a.getName(),r);} }
