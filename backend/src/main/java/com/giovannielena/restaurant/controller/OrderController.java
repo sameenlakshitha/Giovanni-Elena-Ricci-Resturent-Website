@@ -1,0 +1,3 @@
+package com.giovannielena.restaurant.controller;
+import com.giovannielena.restaurant.dto.OrderDtos.CreateOrderRequest; import com.giovannielena.restaurant.service.OrderService; import jakarta.validation.Valid; import org.springframework.security.core.Authentication; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/orders") public class OrderController { private final OrderService service; public OrderController(OrderService service){this.service=service;} @PostMapping public Object create(Authentication auth,@Valid @RequestBody CreateOrderRequest request){return service.create(auth.getName(),request);} @GetMapping public Object mine(Authentication auth){return service.mine(auth.getName());} }
